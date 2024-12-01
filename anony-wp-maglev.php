@@ -31,7 +31,8 @@ define( 'MAGLEV_BASENAME', plugin_basename( __FILE__ ) );
 
 require_once MAGLEV_PATH . '/vendor/autoload.php';
 require_once MAGLEV_PATH . '/ajax-actions.php';
-
+require_once MAGLEV_PATH . '/styles.php';
+require_once MAGLEV_PATH . '/scripts.php';
 
 /**
  * Enqueue plugin scripts and styles.

@@ -16,6 +16,7 @@ defined( 'ABSPATH' ) || exit;
  *
  * The filter `maglev_ajax_actions` allows developers to add, remove,
  * or modify AJAX actions in the `$ajax_actions` array.
+ * The filter should also be called on plugins_loaded hook on a priority less tham 10
  *
  * @since 1.0.0
  *
