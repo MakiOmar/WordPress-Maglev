@@ -30,6 +30,7 @@ define( 'MAGLEV_URL', plugin_dir_url( __FILE__ ) );
 define( 'MAGLEV_BASENAME', plugin_basename( __FILE__ ) );
 
 require_once MAGLEV_PATH . '/vendor/autoload.php';
+require_once MAGLEV_PATH . '/ajax-actions.php';
 
 
 /**
@@ -39,5 +40,6 @@ require_once MAGLEV_PATH . '/vendor/autoload.php';
  */
 function maglev_enqueue_scripts() {
 	wp_enqueue_script( 'htmx', MAGLEV_URL . 'assets/js/htmx.js', array(), '2.0.3', true );
+	wp_enqueue_script( 'sweetaler2', MAGLEV_URL . 'assets/js/sweetaler2.js', array(), '11.14.5', true );
 }
 add_action( 'wp_enqueue_scripts', 'maglev_enqueue_scripts' );
