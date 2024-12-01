@@ -1,0 +1,6 @@
+{
+    "require": {
+        "10quality/wp-query-builder": "^1.0",
+        "dbout/wp-orm": "^3.3"
+    }
+}
