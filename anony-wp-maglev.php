@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WordPress Maglev
  * Plugin URI: https://example.com/my-basic-plugin
- * Description: Build your WordPress projects as fast and easy.
+ * Description: Build your WordPress projects as fast and easy as Maglev.
  * Version: 1.0.0
  * Author: Mohammad Omar
  * Author URI: https://makiomar.com
@@ -18,13 +18,26 @@
 defined( 'ABSPATH' ) || exit;
 
 // Plugin version.
-define( 'MAGlEV_VERSION', '1.0.0' );
+define( 'MAGLEV_VERSION', '1.0.0' );
 
 // Plugin directory path.
-define( 'MAGlEV_PATH', plugin_dir_path( __FILE__ ) );
+define( 'MAGLEV_PATH', plugin_dir_path( __FILE__ ) );
 
 // Plugin URL.
-define( 'MAGlEV_URL', plugin_dir_url( __FILE__ ) );
+define( 'MAGLEV_URL', plugin_dir_url( __FILE__ ) );
 
 // Plugin basename.
-define( 'MAGlEV_BASENAME', plugin_basename( __FILE__ ) );
+define( 'MAGLEV_BASENAME', plugin_basename( __FILE__ ) );
+
+require_once MAGLEV_PATH . '/vendor/autoload.php';
+
+
+/**
+ * Enqueue plugin scripts and styles.
+ *
+ * @return void
+ */
+function maglev_enqueue_scripts() {
+	wp_enqueue_script( 'htmx', MAGLEV_URL . 'assets/js/htmx.js', array(), '2.0.3', true );
+}
+add_action( 'wp_enqueue_scripts', 'maglev_enqueue_scripts' );
