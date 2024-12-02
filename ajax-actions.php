@@ -39,12 +39,14 @@ add_action(
 				add_action( "wp_ajax_{$event}", $settings['callback'] );
 
 				// Register the action for logged-out users if allowed.
-				if ( ! isset( $settings['logged_in_only'] ) || $settings['logged_in_only'] === false ) {
+				if ( ! isset( $settings['logged_in_only'] ) || false === $settings['logged_in_only'] ) {
 					add_action( "wp_ajax_nopriv_{$event}", $settings['callback'] );
 				}
 			} else {
+				//phpcs:disable
 				// Log an error if the callback is not callable.
 				error_log( "The callback for action '{$event}' is not callable or missing." );
+				//phpcs:enable
 			}
 		}
 	}
