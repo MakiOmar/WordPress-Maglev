@@ -42,5 +42,8 @@ require_once MAGLEV_PATH . '/scripts.php';
 function maglev_enqueue_scripts() {
 	wp_enqueue_script( 'htmx', MAGLEV_URL . 'assets/js/htmx.js', array(), '2.0.3', true );
 	wp_enqueue_script( 'sweetaler2', MAGLEV_URL . 'assets/js/sweetaler2.js', array(), '11.14.5', true );
+	wp_enqueue_script( 'bootstrap-bundle', MAGLEV_URL . 'assets/js/bootstrap.bundle.min.js', array(), '5.0.2', true );
+	wp_enqueue_script( 'bootstrap', MAGLEV_URL . 'assets/js/bootstrap.min.js', array(), '5.0.2', true );
+	wp_enqueue_style( 'bootsrap', MAGLEV_URL . 'assets/css/bootstrap.min.css', array(), '5.0.2', 'all' );
 }
 add_action( 'wp_enqueue_scripts', 'maglev_enqueue_scripts' );
