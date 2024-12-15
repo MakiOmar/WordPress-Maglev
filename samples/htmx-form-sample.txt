@@ -1,0 +1,32 @@
+<div id="tracking-container" style="display:flex;justify-content:center">
+		<!-- HTMX Form -->
+		<form 
+			hx-post="<?php echo esc_url( admin_url( 'admin-ajax.php?action=search_tracking_number' ) ); ?>" 
+			hx-target="#tracking-result" 
+			hx-indicator="#maglev-loading-indicator" 
+			style="display: flex; justify-content: center; align-items: center;"
+		>
+			<!-- Input Field for Tracking Number -->
+			<input 
+				type="text" 
+				id="tracking-number" 
+				name="tracking_number" 
+				placeholder="Enter tracking number" 
+				style="padding:10px; margin: 0 5px;" 
+			/>
+			
+			<!-- WP Nonce Field -->
+			<?php wp_nonce_field(); ?>
+
+			<!-- Submit Button -->
+			<button 
+				type="submit" 
+				style="background-color: #f15f22; color: #fff; border: 1px solid #f15f22; border-radius: 3px; padding: 10px; width: 100px;"
+			>
+				<?php esc_html_e( 'Search', 'coursh' ); ?>
+			</button>
+		</form>
+
+		<!-- Result Container -->
+		<div id="tracking-result" style="display:none"></div>
+	</div>
